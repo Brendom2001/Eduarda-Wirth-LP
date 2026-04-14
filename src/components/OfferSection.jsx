@@ -1,4 +1,5 @@
 import { m } from 'framer-motion'
+import { useAnimateOnce } from '../hooks/useAnimateOnce'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -17,16 +18,18 @@ const CheckFilled = () => (
 )
 
 export default function OfferSection() {
+  const [headerRef, headerVisible] = useAnimateOnce()
+  const [cardRef, cardVisible] = useAnimateOnce()
+
   return (
     <section id="agendamento" className="bg-brand-detail/15 py-20">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <div className="max-w-3xl mx-auto">
 
-          {/* Heading */}
           <m.div
+            ref={headerRef}
             initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
+            animate={headerVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
             transition={{ duration: 0.7, ease: easing }}
             className="text-center mb-10"
           >
@@ -40,25 +43,21 @@ export default function OfferSection() {
             </h2>
           </m.div>
 
-          {/* Offer card */}
           <m.div
+            ref={cardRef}
             initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
+            animate={cardVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
             transition={{ duration: 0.75, ease: easing, delay: 0.1 }}
             className="bg-[#EAEAE5] border border-brand-section rounded-2xl p-6 md:p-14 relative shadow-warm-md"
           >
-            {/* Corner accents */}
             <div className="absolute top-5 right-5 w-14 h-14 border-t border-r border-brand-cta/20 rounded-tr-xl pointer-events-none" />
             <div className="absolute bottom-5 left-5 w-14 h-14 border-b border-l border-brand-cta/20 rounded-bl-xl pointer-events-none" />
 
-            {/* Intro text */}
             <p className="font-dm text-sm text-brand-body/90 leading-relaxed mb-10 max-w-xl mx-auto text-center font-light">
               Consulta completa com a Dra. Laura Gehlen — entendemos seus
               objetivos e elaboramos um plano exclusivo, sem compromisso.
             </p>
 
-            {/* Includes list */}
             <div className="space-y-4 max-w-sm mx-auto mb-12">
               {includes.map((item) => (
                 <div key={item} className="flex items-center gap-3.5">
@@ -68,7 +67,6 @@ export default function OfferSection() {
               ))}
             </div>
 
-            {/* CTA */}
             <div className="text-center">
               <a
                 href="https://wa.me/5551995449443?text=Olá!%20Gostaria%20de%20agendar%20minha%20avaliação%20gratuita%20com%20a%20Dra.%20Laura%20Gehlen."

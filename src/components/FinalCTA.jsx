@@ -1,20 +1,22 @@
 import { m } from 'framer-motion'
+import { useAnimateOnce } from '../hooks/useAnimateOnce'
 
 const easing = [0.22, 1, 0.36, 1]
 
 export default function FinalCTA() {
+  const [ref, visible] = useAnimateOnce()
+
   return (
     <section className="bg-brand-section/20 py-20 relative overflow-hidden">
-      {/* Decorative rings */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-brand-cta/8 rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] border border-brand-cta/5 rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] border border-brand-cta/3 rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 text-center relative z-10">
         <m.div
+          ref={ref}
           initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
+          animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
           transition={{ duration: 0.75, ease: easing }}
         >
           <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-6">

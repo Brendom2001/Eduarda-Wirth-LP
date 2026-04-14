@@ -1,4 +1,5 @@
 import { m } from 'framer-motion'
+import { useAnimateOnce } from '../hooks/useAnimateOnce'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -9,7 +10,7 @@ const highlights = [
   { label: 'Ambiente aconchegante', detail: 'Sapiranga, RS · Centro' },
 ]
 
-// O iframe carrega assim que AboutSection monta (já a 900px do viewport via LazySection)
+// O iframe carrega assim que AboutSection monta (a 900px do viewport via LazySection)
 function LazyMap() {
   return (
     <iframe
@@ -24,33 +25,33 @@ function LazyMap() {
 }
 
 export default function AboutSection() {
+  const [mapRef, mapVisible] = useAnimateOnce()
+  const [badgeRef, badgeVisible] = useAnimateOnce()
+  const [textRef, textVisible] = useAnimateOnce()
+
   return (
     <section id="sobre" className="bg-brand-bg py-20">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-28 items-center">
 
-          {/* Image */}
           <m.div
+            ref={mapRef}
             initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
+            animate={mapVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
             transition={{ duration: 0.8, ease: easing }}
             className="relative"
           >
             <div className="relative aspect-square max-w-md">
-              {/* Map */}
               <div className="w-full h-full rounded-2xl overflow-hidden shadow-warm-xl">
                 <LazyMap />
               </div>
 
-              {/* Offset frame */}
               <div className="absolute -bottom-4 -right-4 w-full h-full border border-brand-detail/20 rounded-2xl -z-10 pointer-events-none" />
 
-              {/* Floating badge */}
               <m.div
+                ref={badgeRef}
                 initial={{ opacity: 0, scale: 0.9, y: 12 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={badgeVisible ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.9, y: 12 }}
                 transition={{ duration: 0.6, ease: easing, delay: 0.35 }}
                 className="absolute -bottom-4 left-4 bg-[#EAEAE5] border border-brand-section px-4 py-3 shadow-warm-md rounded-xl"
               >
@@ -72,11 +73,10 @@ export default function AboutSection() {
             </div>
           </m.div>
 
-          {/* Text content */}
           <m.div
+            ref={textRef}
             initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
+            animate={textVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
             transition={{ duration: 0.8, ease: easing, delay: 0.1 }}
           >
             <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-4">
@@ -94,39 +94,30 @@ export default function AboutSection() {
                 Nossa missão vai além da técnica. Queremos que cada encontro
                 seja leve, humano e memorável.
               </p>
-
-              {/* Visual break */}
               <div className="flex items-center gap-3">
                 <div className="w-6 h-px bg-brand-cta/40" />
                 <div className="w-1 h-1 rounded-full bg-brand-cta/50" />
                 <div className="w-6 h-px bg-brand-cta/40" />
               </div>
-
               <p>
                 Cuidar com verdade é o que nos move. Transformar com
                 sensibilidade é o que nos define.
               </p>
-
-              {/* Visual break */}
               <div className="flex items-center gap-3">
                 <div className="w-6 h-px bg-brand-cta/40" />
                 <div className="w-1 h-1 rounded-full bg-brand-cta/50" />
                 <div className="w-6 h-px bg-brand-cta/40" />
               </div>
-
               <p>
                 Consultório moderno no centro de Sapiranga, RS — ambiente
                 aconchegante do primeiro contato ao resultado final.
               </p>
             </div>
 
-            {/* Highlights grid */}
             <div className="grid grid-cols-2 gap-x-8 gap-y-5">
               {highlights.map(({ label, detail }) => (
                 <div key={label} className="border-t border-brand-section/60 pt-4">
-                  <p className="font-dm text-xs font-semibold text-brand-title tracking-wide">
-                    {label}
-                  </p>
+                  <p className="font-dm text-xs font-semibold text-brand-title tracking-wide">{label}</p>
                   <p className="font-dm text-xs text-brand-body/90 mt-1">{detail}</p>
                 </div>
               ))}

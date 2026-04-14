@@ -1,18 +1,21 @@
 import { m } from 'framer-motion'
+import { useAnimateOnce } from '../hooks/useAnimateOnce'
 
 export default function Footer() {
+  const [col1Ref, col1Visible] = useAnimateOnce()
+  const [col2Ref, col2Visible] = useAnimateOnce()
+  const [col3Ref, col3Visible] = useAnimateOnce()
+
   return (
     <footer id="footer" className="bg-brand-contrast text-white">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
 
-        {/* Main footer */}
         <div className="py-12 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
 
-          {/* Logo + tagline */}
           <m.div
+            ref={col1Ref}
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            animate={col1Visible ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6 }}
           >
             <div className="font-playfair mb-1">
@@ -26,11 +29,10 @@ export default function Footer() {
             </p>
           </m.div>
 
-          {/* Location */}
           <m.div
+            ref={col2Ref}
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            animate={col2Visible ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="md:text-center"
           >
@@ -58,11 +60,10 @@ export default function Footer() {
             </a>
           </m.div>
 
-          {/* Nav */}
           <m.nav
+            ref={col3Ref}
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            animate={col3Visible ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
             className="md:text-right"
           >
@@ -88,7 +89,6 @@ export default function Footer() {
           </m.nav>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-brand-cta/20 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-dm text-xs text-brand-light/70 text-center md:text-left">
             © 2025 Dra. Laura Gehlen · Odontologia Integrada · Sapiranga, RS · Todos os direitos reservados.
