@@ -1,4 +1,3 @@
-import { useRef, useEffect, useState } from 'react'
 import { m } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
@@ -10,40 +9,17 @@ const highlights = [
   { label: 'Ambiente aconchegante', detail: 'Sapiranga, RS · Centro' },
 ]
 
-// Carrega o iframe do Google Maps apenas quando entra no viewport
+// O iframe carrega assim que AboutSection monta (já a 900px do viewport via LazySection)
 function LazyMap() {
-  const ref = useRef(null)
-  const [mapSrc, setMapSrc] = useState('')
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setMapSrc('https://maps.google.com/maps?q=R.+Presidente+Kenedy,+281,+Sapiranga,+RS,+Brasil&t=&z=16&ie=UTF8&iwloc=&output=embed')
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '200px' }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <div ref={ref} className="w-full h-full bg-brand-section/20 rounded-2xl">
-      {mapSrc && (
-        <iframe
-          src={mapSrc}
-          className="w-full h-full border-0 rounded-2xl"
-          loading="lazy"
-          title="Localização do Consultório — Dra. Laura Gehlen"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      )}
-    </div>
+    <iframe
+      src="https://maps.google.com/maps?q=R.+Presidente+Kenedy,+281,+Sapiranga,+RS,+Brasil&t=&z=16&ie=UTF8&iwloc=&output=embed"
+      className="w-full h-full border-0"
+      loading="lazy"
+      title="Localização do Consultório — Dra. Laura Gehlen"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+    />
   )
 }
 

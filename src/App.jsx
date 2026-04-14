@@ -30,7 +30,7 @@ function LazySection({ children, minHeight = '200px' }) {
           observer.disconnect()
         }
       },
-      { rootMargin: '400px' }
+      { rootMargin: '900px' }
     )
     observer.observe(el)
     return () => observer.disconnect()
