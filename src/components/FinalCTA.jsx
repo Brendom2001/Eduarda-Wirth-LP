@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -11,7 +11,7 @@ export default function FinalCTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] border border-brand-cta/3 rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 text-center relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -50,7 +50,7 @@ export default function FinalCTA() {
           <p className="font-dm text-xs text-brand-body/90 mt-6 tracking-wide">
             (51) 99544-9443 · R. Pres. Kenedy, 281, sala 311 · Centro, Sapiranga — RS
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

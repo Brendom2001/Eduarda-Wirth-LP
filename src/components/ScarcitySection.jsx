@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 export default function ScarcitySection() {
   return (
     <section className="bg-brand-contrast py-5 text-white">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -20,7 +20,7 @@ export default function ScarcitySection() {
             <span className="font-semibold">Vagas limitadas</span>{' '}
             <span className="text-brand-light/90">para novos pacientes este mês.</span>
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

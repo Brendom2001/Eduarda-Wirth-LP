@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 export default function MobileCtaBar() {
   const [nearFooter, setNearFooter] = useState(false)
@@ -19,7 +19,7 @@ export default function MobileCtaBar() {
   }, [])
 
   return (
-    <motion.div
+    <m.div
       initial={{ y: 80, opacity: 0 }}
       animate={{ y: nearFooter ? 80 : 0, opacity: nearFooter ? 0 : 1 }}
       transition={
@@ -42,6 +42,6 @@ export default function MobileCtaBar() {
         </svg>
         Agendar Avaliação Gratuita
       </a>
-    </motion.div>
+    </m.div>
   )
 }

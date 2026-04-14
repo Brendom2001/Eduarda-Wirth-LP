@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="py-12 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
 
           {/* Logo + tagline */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -24,10 +24,10 @@ export default function Footer() {
             <p className="font-dm text-xs text-brand-light/90 leading-relaxed max-w-[200px] font-light">
               Cuidado humano, excelência técnica e um sorriso que transforma.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Location */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -56,10 +56,10 @@ export default function Footer() {
               </svg>
               Falar no WhatsApp
             </a>
-          </motion.div>
+          </m.div>
 
           {/* Nav */}
-          <motion.nav
+          <m.nav
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -85,7 +85,7 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </motion.nav>
+          </m.nav>
         </div>
 
         {/* Bottom bar */}

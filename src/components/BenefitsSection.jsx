@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -51,7 +51,7 @@ export default function BenefitsSection() {
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
 
         {/* Heading */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -66,12 +66,12 @@ export default function BenefitsSection() {
             <br />
             <em className="font-light text-brand-cta">Excelência Técnica</em>
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Benefits grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-14">
           {benefits.map((benefit, index) => (
-            <motion.div
+            <m.div
               key={benefit.title}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ export default function BenefitsSection() {
               <p className="font-dm text-sm text-brand-body/90 leading-relaxed font-light">
                 {benefit.text}
               </p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 

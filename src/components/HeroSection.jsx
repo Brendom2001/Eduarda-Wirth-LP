@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -13,32 +13,32 @@ const CheckIcon = () => (
 export default function HeroSection() {
   return (
     <section id="inicio" className="min-h-screen bg-brand-bg relative flex items-center pt-20 overflow-hidden">
-      {/* Ambient decorations */}
-      <div className="absolute top-1/3 right-0 w-[520px] h-[520px] bg-brand-section/25 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-brand-detail/12 rounded-full blur-3xl pointer-events-none" />
+      {/* Decorações ambiente — ocultas no mobile (blur-3xl é pesado na GPU móvel) */}
+      <div className="hidden md:block absolute top-1/3 right-0 w-[520px] h-[520px] bg-brand-section/25 rounded-full blur-3xl pointer-events-none" />
+      <div className="hidden md:block absolute bottom-1/4 left-0 w-72 h-72 bg-brand-detail/12 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 py-10 md:py-16 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
 
           {/* Left — Content */}
-          <motion.div
+          <m.div
             initial="hidden"
             animate="visible"
             transition={{ staggerChildren: 0.13 }}
             className="w-full"
           >
             {/* Eyebrow */}
-            <motion.p
+            <m.p
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.65, ease: easing }}
               className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-5 flex items-center gap-2"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse inline-block" />
               Sapiranga · RS · Odontologia Integrada
-            </motion.p>
+            </m.p>
 
             {/* H1 */}
-            <motion.h1
+            <m.h1
               variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.75, ease: easing }}
               className="font-playfair text-3xl sm:text-4xl lg:text-[3.4rem] xl:text-[4rem] font-bold text-brand-title leading-[1.08] mb-7"
@@ -48,20 +48,20 @@ export default function HeroSection() {
                 Integrada
               </em>{' '}
               <span className="block">com Cuidado Humano</span>
-            </motion.h1>
+            </m.h1>
 
             {/* Subtitle */}
-            <motion.p
+            <m.p
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.7, ease: easing }}
               className="font-dm text-base md:text-lg text-brand-body/90 leading-relaxed mb-9 max-w-[480px] font-light"
             >
               Atendimento odontológico personalizado com tecnologia avançada,
               precisão clínica e o cuidado humano que cada sorriso merece.
-            </motion.p>
+            </m.p>
 
             {/* Bullet list */}
-            <motion.ul
+            <m.ul
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.7, ease: easing }}
               className="space-y-3.5 mb-11"
@@ -76,10 +76,10 @@ export default function HeroSection() {
                   <span>{item}</span>
                 </li>
               ))}
-            </motion.ul>
+            </m.ul>
 
             {/* CTAs */}
-            <motion.div
+            <m.div
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.7, ease: easing }}
               className="flex flex-col sm:flex-row gap-4 items-start"
@@ -109,10 +109,10 @@ export default function HeroSection() {
                 </svg>
                 WhatsApp
               </a>
-            </motion.div>
+            </m.div>
 
             {/* Social proof */}
-            <motion.div
+            <m.div
               variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
               transition={{ duration: 0.6, ease: easing, delay: 0.1 }}
               className="mt-9 flex items-center gap-4"
@@ -123,20 +123,26 @@ export default function HeroSection() {
                     key={n}
                     className="w-8 h-8 rounded-full border-2 border-brand-bg bg-brand-section overflow-hidden"
                   >
-                    <img src={`https://i.pravatar.cc/40?img=${n}`} alt="" className="w-full h-full object-cover" />
+                    <img
+                      src={`https://i.pravatar.cc/40?img=${n}`}
+                      alt=""
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 ))}
               </div>
               <p className="font-dm text-sm text-brand-body/90">
                 <span className="font-semibold text-brand-title">+5.049</span> avaliações no Google
               </p>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Right — Hero Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
+          <m.div
+            initial={{ opacity: 0, scale: 0.96, y: 16 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease: easing, delay: 0.2 }}
             className="relative w-full"
           >
@@ -148,6 +154,7 @@ export default function HeroSection() {
                   alt="Dra. Laura Gehlen — Odontologia Integrada em Sapiranga, RS"
                   className="w-full h-full object-cover object-center"
                   loading="eager"
+                  fetchpriority="high"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-contrast/20 via-transparent to-transparent rounded-2xl" />
               </div>
@@ -156,7 +163,7 @@ export default function HeroSection() {
               <div className="hidden md:block absolute -bottom-3 -right-3 w-full h-full border border-brand-detail/25 rounded-2xl -z-10 pointer-events-none" />
 
               {/* Floating badge — bottom left */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: easing, delay: 0.9 }}
@@ -177,12 +184,12 @@ export default function HeroSection() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
 
               {/* Decorative circle — hidden on mobile to prevent overflow */}
               <div className="hidden md:block absolute -top-5 -left-5 w-20 h-20 border border-brand-detail/20 rounded-full -z-10 pointer-events-none" />
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

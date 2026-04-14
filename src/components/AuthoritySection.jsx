@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { m, useInView } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -57,7 +57,7 @@ export default function AuthoritySection() {
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
 
         {/* Heading */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -72,10 +72,10 @@ export default function AuthoritySection() {
             <br />
             <em className="font-light text-brand-section">em Sapiranga, RS</em>
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Metrics */}
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
@@ -83,7 +83,7 @@ export default function AuthoritySection() {
           className="grid grid-cols-2 md:grid-cols-3 gap-px bg-brand-cta/20 mb-14"
         >
           {metrics.map(({ counter, unit, label }) => (
-            <motion.div
+            <m.div
               key={label}
               variants={{
                 hidden: { opacity: 0, y: 16 },
@@ -103,12 +103,12 @@ export default function AuthoritySection() {
               <p className="font-dm text-xs text-brand-light/90 tracking-[0.2em] uppercase">
                 {label}
               </p>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Body text — máx. 2 linhas por bloco, separadas por ícone */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -131,7 +131,7 @@ export default function AuthoritySection() {
             Excelência, pra nós, também se revela na forma como se cuida.
             Cuidar com verdade é o que nos move.
           </p>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

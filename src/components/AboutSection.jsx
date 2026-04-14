@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useRef, useEffect, useState } from 'react'
+import { m } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -9,6 +10,43 @@ const highlights = [
   { label: 'Ambiente aconchegante', detail: 'Sapiranga, RS · Centro' },
 ]
 
+// Carrega o iframe do Google Maps apenas quando entra no viewport
+function LazyMap() {
+  const ref = useRef(null)
+  const [mapSrc, setMapSrc] = useState('')
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setMapSrc('https://maps.google.com/maps?q=R.+Presidente+Kenedy,+281,+Sapiranga,+RS,+Brasil&t=&z=16&ie=UTF8&iwloc=&output=embed')
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '200px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div ref={ref} className="w-full h-full bg-brand-section/20 rounded-2xl">
+      {mapSrc && (
+        <iframe
+          src={mapSrc}
+          className="w-full h-full border-0 rounded-2xl"
+          loading="lazy"
+          title="Localização do Consultório — Dra. Laura Gehlen"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      )}
+    </div>
+  )
+}
+
 export default function AboutSection() {
   return (
     <section id="sobre" className="bg-brand-bg py-20">
@@ -16,9 +54,9 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-28 items-center">
 
           {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -28 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          <m.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.8, ease: easing }}
             className="relative"
@@ -26,21 +64,14 @@ export default function AboutSection() {
             <div className="relative aspect-square max-w-md">
               {/* Map */}
               <div className="w-full h-full rounded-2xl overflow-hidden shadow-warm-xl">
-                <iframe
-                  src="https://maps.google.com/maps?q=R.+Presidente+Kenedy,+281,+Sapiranga,+RS,+Brasil&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                  className="w-full h-full border-0"
-                  loading="lazy"
-                  title="Localização do Consultório — Dra. Laura Gehlen"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+                <LazyMap />
               </div>
 
               {/* Offset frame */}
               <div className="absolute -bottom-4 -right-4 w-full h-full border border-brand-detail/20 rounded-2xl -z-10 pointer-events-none" />
 
               {/* Floating badge */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, scale: 0.9, y: 12 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -61,16 +92,16 @@ export default function AboutSection() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Text content */}
-          <motion.div
-            initial={{ opacity: 0, x: 28 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          <m.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8, ease: easing }}
+            transition={{ duration: 0.8, ease: easing, delay: 0.1 }}
           >
             <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-4">
               Sobre nós
@@ -124,7 +155,7 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

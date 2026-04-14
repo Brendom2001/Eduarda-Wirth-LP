@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
 
         {/* Heading */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -57,18 +57,17 @@ export default function TestimonialsSection() {
             <br />
             <em className="font-light text-brand-cta">Estão Dizendo</em>
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Testimonial cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, index) => (
-            <motion.div
+            <m.div
               key={t.name}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.65, ease: easing, delay: index * 0.12 }}
-              whileHover={{ y: -4 }}
               className="bg-brand-section/15 border border-brand-section/50 p-8 flex flex-col hover:border-brand-detail/60 hover:bg-brand-section/25 transition-all duration-300 rounded-xl"
             >
               {/* Stars */}
@@ -101,7 +100,7 @@ export default function TestimonialsSection() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 

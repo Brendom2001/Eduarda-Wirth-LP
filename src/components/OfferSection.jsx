@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -23,7 +23,7 @@ export default function OfferSection() {
         <div className="max-w-3xl mx-auto">
 
           {/* Heading */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -38,10 +38,10 @@ export default function OfferSection() {
               <br />
               <em className="font-light text-brand-cta">Personalizada</em>
             </h2>
-          </motion.div>
+          </m.div>
 
           {/* Offer card */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -85,7 +85,7 @@ export default function OfferSection() {
                 (51) 99544-9443 · R. Pres. Kenedy, 281, sala 311 · Sapiranga, RS
               </p>
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

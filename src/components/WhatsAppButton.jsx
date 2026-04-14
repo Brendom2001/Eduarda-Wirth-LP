@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 export default function WhatsAppButton() {
   const [nearFooter, setNearFooter] = useState(false)
@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
   }, [])
 
   return (
-    <motion.a
+    <m.a
       href="https://wa.me/5551995449443?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Laura%20Gehlen."
       target="_blank"
       rel="noopener noreferrer"
@@ -45,6 +45,6 @@ export default function WhatsAppButton() {
       <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-brand-contrast text-[#EAEAE5] font-dm text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none shadow-warm-sm">
         Falar no WhatsApp
       </span>
-    </motion.a>
+    </m.a>
   )
 }

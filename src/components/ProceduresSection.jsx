@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -40,12 +40,11 @@ const procedures = [
 
 function ProcedureCard({ procedure, index }) {
   return (
-    <motion.article
+    <m.article
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.65, ease: easing, delay: index * 0.1 }}
-      whileHover={{ y: -6 }}
       className="group bg-[#EAEAE5] border border-brand-section/60 p-8 relative flex flex-col shadow-warm-sm hover:shadow-warm-lg transition-all duration-500 cursor-default"
     >
       {/* Tag badge */}
@@ -108,7 +107,7 @@ function ProcedureCard({ procedure, index }) {
           </span>
         </div>
       </div>
-    </motion.article>
+    </m.article>
   )
 }
 
@@ -118,7 +117,7 @@ export default function ProceduresSection() {
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
 
         {/* Section header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -133,7 +132,7 @@ export default function ProceduresSection() {
             <br />
             <em className="font-light text-brand-cta">Procurados</em>
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
