@@ -51,22 +51,22 @@ export default function HeroSection() {
             {/* H1 — mask reveal: cada linha sobe de dentro do seu container */}
             <m.h1
               variants={h1Stagger}
-              className="font-playfair text-[1.65rem] sm:text-4xl lg:text-[3.4rem] xl:text-[4rem] font-bold text-brand-title leading-[1.1] mb-7"
+              className="font-playfair text-[1.65rem] sm:text-4xl lg:text-[3.4rem] xl:text-[4rem] font-bold text-brand-title leading-[1.05] sm:leading-[1.1] mb-5 sm:mb-7"
             >
               {/* Linha 1 */}
-              <span className="block overflow-hidden py-[0.15em]">
+              <span className="block overflow-hidden py-[0.08em] sm:py-[0.15em]">
                 <m.span variants={lineMask} className="block">
                   Nutrição leve, prática
                 </m.span>
               </span>
               {/* Linha 2 — cor de destaque */}
-              <span className="block overflow-hidden py-[0.15em]">
+              <span className="block overflow-hidden py-[0.08em] sm:py-[0.15em]">
                 <m.em variants={lineMask} className="block font-light text-brand-cta not-italic">
                   e equilibrada
                 </m.em>
               </span>
               {/* Linha 3 */}
-              <span className="block overflow-hidden py-[0.15em]">
+              <span className="block overflow-hidden py-[0.08em] sm:py-[0.15em]">
                 <m.span variants={lineMask} className="block">
                   que se encaixa na sua rotina
                 </m.span>
