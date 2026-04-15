@@ -2,6 +2,17 @@ import { m } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
+// Mask reveal — container controla o stagger, linhas sobem de dentro
+const h1Stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.14, delayChildren: 0.05 } },
+}
+
+const lineMask = {
+  hidden: { y: '110%' },
+  visible: { y: '0%', transition: { duration: 0.9, ease: easing } },
+}
+
 const CheckIcon = () => (
   <span className="w-5 h-5 rounded-full bg-brand-cta/15 flex items-center justify-center flex-shrink-0">
     <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
@@ -37,17 +48,29 @@ export default function HeroSection() {
               Sapiranga / Nova Hartz · RS · Nutricionista
             </m.p>
 
-            {/* H1 */}
+            {/* H1 — mask reveal: cada linha sobe de dentro do seu container */}
             <m.h1
-              variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
-              transition={{ duration: 0.75, ease: easing }}
+              variants={h1Stagger}
               className="font-playfair text-[1.65rem] sm:text-4xl lg:text-[3.4rem] xl:text-[4rem] font-bold text-brand-title leading-[1.1] mb-7"
             >
-              Nutrição leve, prática{' '}
-              <em className="text-brand-cta font-light not-italic">
-                e equilibrada
-              </em>{' '}
-              <span className="block">que se encaixa na sua rotina</span>
+              {/* Linha 1 */}
+              <span className="block overflow-hidden py-[0.15em]">
+                <m.span variants={lineMask} className="block">
+                  Nutrição leve, prática
+                </m.span>
+              </span>
+              {/* Linha 2 — cor de destaque */}
+              <span className="block overflow-hidden py-[0.15em]">
+                <m.em variants={lineMask} className="block font-light text-brand-cta not-italic">
+                  e equilibrada
+                </m.em>
+              </span>
+              {/* Linha 3 */}
+              <span className="block overflow-hidden py-[0.15em]">
+                <m.span variants={lineMask} className="block">
+                  que se encaixa na sua rotina
+                </m.span>
+              </span>
             </m.h1>
 
             {/* Subtitle */}
