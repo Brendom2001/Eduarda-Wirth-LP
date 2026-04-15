@@ -20,7 +20,7 @@ export default function ScarcitySection() {
           </div>
           <p className="font-dm text-sm text-[#EAEAE5]">
             <span className="font-semibold">Vagas limitadas</span>{' '}
-            <span className="text-brand-light/90">para novos pacientes este mês.</span>
+            <span className="text-brand-light/90">para novas consultas este mês.</span>
           </p>
         </m.div>
       </div>

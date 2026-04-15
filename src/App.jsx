@@ -15,7 +15,7 @@ const AboutSection = lazy(() => import('./components/AboutSection'))
 const FinalCTA = lazy(() => import('./components/FinalCTA'))
 const Footer = lazy(() => import('./components/Footer'))
 
-// Componentes só montam quando estão próximos do viewport (400px de margem)
+// Componentes só montam quando estão próximos do viewport (900px de margem)
 function LazySection({ children, minHeight = '200px' }) {
   const ref = useRef(null)
   const [shouldRender, setShouldRender] = useState(false)

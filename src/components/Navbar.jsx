@@ -33,10 +33,10 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="group flex flex-col leading-none">
           <span className="font-playfair text-lg font-semibold text-brand-title tracking-wide group-hover:text-brand-cta transition-colors duration-300">
-            Dra. Laura Gehlen
+            Eduarda Wirth
           </span>
           <span className="font-dm text-[9px] tracking-[0.28em] uppercase text-brand-contrast mt-0.5">
-            Odontologia Integrada
+            Nutricionista · CRN 21631D
           </span>
         </a>
 
@@ -55,7 +55,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <a
-          href="https://wa.me/5551995449443?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Laura%20Gehlen." target="_blank" rel="noopener noreferrer"
+          href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Eduarda%20Wirth." target="_blank" rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2 bg-brand-cta text-[#EAEAE5] font-dm text-sm font-medium tracking-wide px-6 py-3 rounded-full hover:bg-brand-contrast transition-all duration-300 hover:shadow-warm-md min-h-[44px]"
         >
           Agendar Consulta
@@ -107,7 +107,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="https://wa.me/5551995449443?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Laura%20Gehlen." target="_blank" rel="noopener noreferrer"
+                href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Eduarda%20Wirth." target="_blank" rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 flex items-center justify-center bg-brand-cta text-[#EAEAE5] font-dm font-medium text-sm rounded-full py-3.5 min-h-[44px] hover:bg-brand-contrast transition-colors duration-300"
               >

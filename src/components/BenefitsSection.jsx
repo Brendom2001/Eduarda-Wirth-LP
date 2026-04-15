@@ -8,41 +8,56 @@ const benefits = [
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="18" stroke="#9A856A" strokeWidth="0.75" />
-        <path
-          d="M20 6C20 6, 30 12, 30 22C30 27.5 25.5 32 20 32C14.5 32 10 27.5 10 22C10 12, 20 6, 20 6Z"
-          stroke="#9A856A" strokeWidth="0.75" fill="none"
-        />
-        <circle cx="20" cy="22" r="3" stroke="#9A856A" strokeWidth="0.75" />
-        <line x1="20" y1="19" x2="20" y2="14" stroke="#9A856A" strokeWidth="0.5" />
+        <path d="M13 20 L18 25 L27 14" stroke="#9A856A" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Cuidado Humano e Personalizado',
-    text: 'Cada consulta é única. Ouvimos você com atenção e planejamos o tratamento respeitando o seu ritmo, suas necessidades e a sua história.',
+    title: 'Sem julgamentos',
+    text: 'Aqui você é acolhida como é. Cada história é única e o atendimento respeita o seu ponto de partida, sem críticas ou comparações.',
   },
   {
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="18" stroke="#9A856A" strokeWidth="0.75" />
-        <circle cx="20" cy="20" r="8" stroke="#9A856A" strokeWidth="0.75" />
-        <path d="M20 12 L20 8" stroke="#9A856A" strokeWidth="0.75" strokeLinecap="round" />
-        <path d="M20 21 L23 20" stroke="#9A856A" strokeWidth="1" strokeLinecap="round" />
-        <circle cx="20" cy="20" r="1.5" fill="#9A856A" fillOpacity="0.5" />
+        <path d="M14 26 Q20 10 26 26" stroke="#9A856A" strokeWidth="0.75" fill="none" strokeLinecap="round" />
+        <circle cx="20" cy="20" r="2" fill="#9A856A" fillOpacity="0.4" />
       </svg>
     ),
-    title: 'Excelência Técnica e Tecnologia',
-    text: 'Consultório moderno com tecnologia e materiais de qualidade, garantindo tratamentos precisos, seguros e resultados duradouros.',
+    title: 'Sem metas irreais',
+    text: 'Objetivos construídos de forma honesta, progressiva e sustentável — sem promessas milagrosas ou cobranças que desmotivam.',
   },
   {
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="18" stroke="#9A856A" strokeWidth="0.75" />
-        <path d="M13 20 Q20 11, 27 20 Q20 29, 13 20Z" stroke="#9A856A" strokeWidth="0.75" fill="none" />
-        <line x1="20" y1="13" x2="20" y2="27" stroke="#9A856A" strokeWidth="0.4" strokeDasharray="2 2.5" />
-        <circle cx="20" cy="20" r="2" fill="#9A856A" fillOpacity="0.3" />
+        <rect x="13" y="14" width="14" height="12" rx="2" stroke="#9A856A" strokeWidth="0.75" />
+        <path d="M16 14 L16 12M24 14 L24 12" stroke="#9A856A" strokeWidth="0.75" strokeLinecap="round" />
+        <path d="M16 20 L18 22 L24 17" stroke="#9A856A" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: 'Experiência Leve e Memorável',
-    text: 'Ambiente aconchegante e equipe acolhedora para que cada visita seja uma experiência leve, humana e que você queira repetir.',
+    title: 'Plano possível de seguir',
+    text: 'Nada de cardápio de hospital. O plano alimentar é pensado para a sua realidade, com alimentos que você gosta e que cabem na sua rotina.',
+  },
+  {
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="#9A856A" strokeWidth="0.75" />
+        <path d="M12 28 C12 22 16 16 20 16 C24 16 28 22 28 28" stroke="#9A856A" strokeWidth="0.75" fill="none" strokeLinecap="round" />
+        <circle cx="20" cy="13" r="2.5" stroke="#9A856A" strokeWidth="0.75" />
+      </svg>
+    ),
+    title: 'Sua rotina é considerada',
+    text: 'O atendimento leva em conta o seu trabalho, família, horários e preferências. A nutrição se adapta a você, não o contrário.',
+  },
+  {
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="#9A856A" strokeWidth="0.75" />
+        <path d="M20 12 C14 12 11 16 11 20 C11 24 14 28 20 28 C26 28 29 24 29 20 C29 16 26 12 20 12Z" stroke="#9A856A" strokeWidth="0.75" fill="none" />
+        <path d="M17 20 L19 22 L23 17" stroke="#9A856A" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    title: 'Sem restrições extremas',
+    text: 'A alimentação saudável não precisa ser sofrida. O equilíbrio é o caminho — sem cortar grupos alimentares inteiros ou eliminar o prazer de comer.',
   },
 ]
 
@@ -85,12 +100,12 @@ function SectionHeader() {
       className="text-center mb-14"
     >
       <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-4">
-        Nossa filosofia
+        Diferenciais
       </p>
       <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-brand-title leading-tight">
-        Cuidado Humano Com
+        O Que Você Não Vai
         <br />
-        <em className="font-light text-brand-cta">Excelência Técnica</em>
+        <em className="font-light text-brand-cta">Encontrar Aqui</em>
       </h2>
     </m.div>
   )

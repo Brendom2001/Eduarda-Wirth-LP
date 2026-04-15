@@ -17,36 +17,69 @@ const headerVariants = {
 const procedures = [
   {
     id: 1,
-    category: 'Saúde e Prevenção',
-    name: 'Saúde Bucal Preventiva',
-    benefit: 'Protege e mantém o seu sorriso saudável',
+    category: 'Diagnóstico',
+    name: 'Anamnese Clínica e Alimentar',
+    benefit: 'Entendimento profundo da sua história alimentar',
     differential:
-      'Cuidado preventivo contínuo com acompanhamento individualizado e tecnologia de ponta, para preservar a saúde do seu sorriso a longo prazo.',
-    approach: 'Preventiva e contínua',
-    indication: 'Todas as idades',
-    tag: 'Mais procurado',
+      'Avaliação detalhada do histórico clínico, hábitos alimentares e estilo de vida para construir um plano verdadeiramente personalizado.',
+    approach: 'Individualizada',
+    indication: 'Todos os perfis',
+    tag: 'Primeiro passo',
   },
   {
     id: 2,
-    category: 'Estética e Harmonia',
-    name: 'Odontologia Estética',
-    benefit: 'Transforma e harmoniza o seu sorriso',
+    category: 'Investigação',
+    name: 'Rastreamento Metabólico',
+    benefit: 'Identifica padrões que afetam sua saúde',
     differential:
-      'Tratamentos estéticos planejados com precisão clínica e sensibilidade artística, valorizando a beleza natural e a identidade de cada sorriso.',
-    approach: 'Estética e funcional',
-    indication: 'Personalizada',
+      'Análise funcional dos processos metabólicos para compreender como seu organismo responde aos alimentos e orienta a conduta nutricional.',
+    approach: 'Funcional',
+    indication: 'Sob avaliação',
     tag: null,
   },
   {
     id: 3,
-    category: 'Cuidado Integrado',
-    name: 'Tratamentos Integrados',
-    benefit: 'Visão completa da sua saúde bucal',
+    category: 'Clínica',
+    name: 'Avaliação de Exames',
+    benefit: 'Interpretação nutricional dos seus exames',
     differential:
-      'Abordagem integrativa que une cuidado técnico e humano, oferecendo um atendimento completo, leve e memorável em cada etapa do tratamento.',
-    approach: 'Multidisciplinar',
-    indication: 'Sob avaliação',
-    tag: 'Atendimento completo',
+      'Leitura e interpretação de exames laboratoriais com foco nutricional, integrando os resultados ao plano alimentar de forma prática.',
+    approach: 'Integrativa',
+    indication: 'Com exames recentes',
+    tag: null,
+  },
+  {
+    id: 4,
+    category: 'Corporal',
+    name: 'Avaliação Antropométrica',
+    benefit: 'Mapeamento completo da composição corporal',
+    differential:
+      'Medidas e análise corporal para acompanhar resultados com precisão e ajustar o plano conforme a evolução de cada paciente.',
+    approach: 'Quantitativa',
+    indication: 'Todos os perfis',
+    tag: null,
+  },
+  {
+    id: 5,
+    category: 'Educação',
+    name: 'Orientações Nutricionais',
+    benefit: 'Ferramentas para escolhas conscientes no dia a dia',
+    differential:
+      'Orientações práticas e educação alimentar para que você desenvolva autonomia e uma relação mais saudável e leve com a comida.',
+    approach: 'Educativa',
+    indication: 'Todos os perfis',
+    tag: 'Mais buscado',
+  },
+  {
+    id: 6,
+    category: 'Planejamento',
+    name: 'Plano Alimentar Individualizado',
+    benefit: 'Alimentação que se encaixa na sua rotina real',
+    differential:
+      'Plano alimentar pensado para a sua rotina, preferências e objetivos — sem restrições extremas, possível de seguir e sustentável a longo prazo.',
+    approach: 'Personalizado',
+    indication: 'Todos os perfis',
+    tag: null,
   },
 ]
 
@@ -110,9 +143,14 @@ function ProcedureCard({ procedure, index }) {
           <span className="font-dm text-[10px] text-brand-contrast font-semibold uppercase tracking-[0.2em]">
             Agendamento
           </span>
-          <span className="font-playfair text-base text-brand-cta font-medium italic">
-            Consulte-nos
-          </span>
+          <a
+            href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Eduarda%20Wirth."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-playfair text-base text-brand-cta font-medium italic hover:text-brand-contrast transition-colors duration-300"
+          >
+            Consulte-nos →
+          </a>
         </div>
       </div>
     </m.article>
@@ -132,12 +170,12 @@ function SectionHeader() {
       className="mb-16"
     >
       <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-4">
-        Nossos Serviços
+        Consulta Nutricional
       </p>
       <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-brand-title leading-tight max-w-lg">
-        Tratamentos Mais
+        O Que Está Incluso
         <br />
-        <em className="font-light text-brand-cta">Procurados</em>
+        <em className="font-light text-brand-cta">no Atendimento</em>
       </h2>
     </m.div>
   )

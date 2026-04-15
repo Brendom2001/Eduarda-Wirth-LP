@@ -19,13 +19,13 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="font-playfair mb-1">
-              <span className="text-[#EAEAE5] text-xl font-semibold tracking-wide">Dra. Laura Gehlen</span>
+              <span className="text-[#EAEAE5] text-xl font-semibold tracking-wide">Eduarda Wirth</span>
             </div>
             <p className="font-dm text-[9px] tracking-[0.28em] uppercase text-brand-light/90 mb-4">
-              Odontologia Integrada
+              Nutricionista · CRN 21631D
             </p>
             <p className="font-dm text-xs text-brand-light/90 leading-relaxed max-w-[200px] font-light">
-              Cuidado humano, excelência técnica e um sorriso que transforma.
+              Nutrição leve, prática e equilibrada que se encaixa na sua rotina.
             </p>
           </m.div>
 
@@ -37,18 +37,17 @@ export default function Footer() {
             className="md:text-center"
           >
             <p className="font-dm text-xs text-brand-light/90 font-semibold tracking-[0.25em] uppercase mb-3">
-              Localização
+              Contato
             </p>
             <p className="font-dm text-sm text-brand-light/90 leading-relaxed">
-              R. Pres. Kenedy, 281, sala 311<br />
-              Centro · Sapiranga — RS<br />
-              CEP 93800-140
+              Sapiranga · Nova Hartz — RS<br />
+              Online para todo o Brasil
             </p>
             <p className="font-dm text-sm text-brand-light/90 mt-2">
-              (51) 99544-9443
+              (51) 9 9548-4860
             </p>
             <a
-              href="https://wa.me/5551995449443?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Laura%20Gehlen."
+              href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Eduarda%20Wirth."
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 bg-[#25D366] text-white font-dm text-xs font-medium px-5 py-2.5 rounded-full hover:bg-[#22c05c] transition-colors duration-300 min-h-[40px]"
@@ -91,7 +90,7 @@ export default function Footer() {
 
         <div className="border-t border-brand-cta/20 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-dm text-xs text-brand-light/70 text-center md:text-left">
-            © 2025 Dra. Laura Gehlen · Odontologia Integrada · Sapiranga, RS · Todos os direitos reservados.
+            © 2025 Eduarda Wirth · Nutricionista · CRN 21631D · Sapiranga, RS · Todos os direitos reservados.
           </p>
           <p className="font-dm text-xs text-brand-light/70 text-center md:text-right max-w-xs">
             Este site tem finalidade informativa. Consulte sempre um profissional habilitado.

@@ -4,20 +4,20 @@ import { useAnimateOnce } from '../hooks/useAnimateOnce'
 const easing = [0.22, 1, 0.36, 1]
 
 const highlights = [
-  { label: 'Odontologia Integrada', detail: 'Cuidado completo e humanizado' },
-  { label: 'Atendimento premium', detail: 'Personalizado e exclusivo' },
-  { label: 'Tecnologia avançada', detail: 'Materiais de qualidade' },
-  { label: 'Ambiente aconchegante', detail: 'Sapiranga, RS · Centro' },
+  { label: 'Nutrição Esportiva Funcional', detail: 'Pós-graduanda na área' },
+  { label: 'Formação', detail: 'Unisinos · CRN 21631D' },
+  { label: 'Presencial', detail: 'Sapiranga e Nova Hartz, RS' },
+  { label: 'Online', detail: 'Para qualquer lugar do mundo' },
 ]
 
 // O iframe carrega assim que AboutSection monta (a 900px do viewport via LazySection)
 function LazyMap() {
   return (
     <iframe
-      src="https://maps.google.com/maps?q=R.+Presidente+Kenedy,+281,+Sapiranga,+RS,+Brasil&t=&z=16&ie=UTF8&iwloc=&output=embed"
+      src="https://maps.google.com/maps?q=Sapiranga,+RS,+Brasil&t=&z=14&ie=UTF8&iwloc=&output=embed"
       className="w-full h-full border-0"
       loading="lazy"
-      title="Localização do Consultório — Dra. Laura Gehlen"
+      title="Localização — Eduarda Wirth Nutricionista"
       allowFullScreen
       referrerPolicy="no-referrer-when-downgrade"
     />
@@ -62,10 +62,10 @@ export default function AboutSection() {
                   </svg>
                   <div>
                     <p className="font-dm text-xs font-semibold text-brand-title leading-tight">
-                      R. Pres. Kenedy, 281 · Sala 311
+                      Sapiranga · Nova Hartz
                     </p>
                     <p className="font-dm text-[10px] text-brand-contrast tracking-wide mt-0.5">
-                      Centro · Sapiranga, RS
+                      Rio Grande do Sul · Online
                     </p>
                   </div>
                 </div>
@@ -80,19 +80,19 @@ export default function AboutSection() {
             transition={{ duration: 0.8, ease: easing, delay: 0.1 }}
           >
             <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-4">
-              Sobre nós
+              Sobre a nutricionista
             </p>
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-brand-title leading-tight mb-5">
-              Dra. Laura Gehlen
+              Eduarda Wirth
               <br />
-              <em className="font-light text-brand-cta">Odontologia Integrada</em>
+              <em className="font-light text-brand-cta">Nutricionista · CRN 21631D</em>
             </h2>
             <div className="w-12 h-px bg-brand-cta/40 mb-8" />
 
             <div className="space-y-5 font-dm text-sm text-brand-body/90 leading-relaxed mb-10 font-light">
               <p>
-                Nossa missão vai além da técnica. Queremos que cada encontro
-                seja leve, humano e memorável.
+                Nutricionista formada pela Unisinos e pós-graduanda em
+                Nutrição Esportiva Funcional.
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-6 h-px bg-brand-cta/40" />
@@ -100,8 +100,8 @@ export default function AboutSection() {
                 <div className="w-6 h-px bg-brand-cta/40" />
               </div>
               <p>
-                Cuidar com verdade é o que nos move. Transformar com
-                sensibilidade é o que nos define.
+                Acredito que a nutrição vai muito além de dietas restritivas —
+                ela é uma ferramenta de autonomia, equilíbrio e qualidade de vida.
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-6 h-px bg-brand-cta/40" />
@@ -109,8 +109,8 @@ export default function AboutSection() {
                 <div className="w-6 h-px bg-brand-cta/40" />
               </div>
               <p>
-                Consultório moderno no centro de Sapiranga, RS — ambiente
-                aconchegante do primeiro contato ao resultado final.
+                Atendimento presencial em Sapiranga e Nova Hartz — RS,
+                e online para qualquer lugar do mundo.
               </p>
             </div>
 

@@ -15,25 +15,25 @@ const headerVariants = {
 
 const testimonials = [
   {
-    quote: 'Recomento demais o trabalho dela e de toda a equipe!',
-    name: 'Maria Eduarda Pereira Plangg',
+    quote: 'Ela não me deu uma dieta impossível. Me deu um plano que eu consigo seguir de verdade, sem culpa.',
+    name: 'Ana Paula',
     location: 'Sapiranga, RS',
-    source: 'Avaliação no Google',
-    initial: 'M',
+    source: 'Paciente presencial',
+    initial: 'A',
   },
   {
-    quote: 'Consultório moderno, tecnologia e materiais de qualidade.',
-    name: 'Luiz Fernando Kichler',
-    location: 'Sapiranga, RS',
-    source: 'Avaliação no Google',
-    initial: 'L',
+    quote: 'Nunca me senti julgada. A Eduarda escuta de verdade e adapta tudo à minha realidade.',
+    name: 'Fernanda',
+    location: 'Nova Hartz, RS',
+    source: 'Paciente presencial',
+    initial: 'F',
   },
   {
-    quote: 'Além de tudo, o ambiente é super aconchegante!',
-    name: 'Gustavo',
-    location: 'Sapiranga, RS',
-    source: 'Avaliação no Google',
-    initial: 'G',
+    quote: 'Fiz o atendimento online e foi incrível. Prático, acolhedor e com resultado real.',
+    name: 'Carla',
+    location: 'Porto Alegre, RS',
+    source: 'Paciente online',
+    initial: 'C',
   },
 ]
 
@@ -101,7 +101,7 @@ function SectionHeader() {
         Depoimentos
       </p>
       <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-brand-title leading-tight">
-        O Que Nossos Pacientes
+        O Que as Pacientes
         <br />
         <em className="font-light text-brand-cta">Estão Dizendo</em>
       </h2>

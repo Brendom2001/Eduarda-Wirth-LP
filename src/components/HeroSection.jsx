@@ -34,7 +34,7 @@ export default function HeroSection() {
               className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-5 flex items-center gap-2"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse inline-block" />
-              Sapiranga · RS · Odontologia Integrada
+              Sapiranga / Nova Hartz · RS · Nutricionista
             </m.p>
 
             {/* H1 */}
@@ -43,11 +43,11 @@ export default function HeroSection() {
               transition={{ duration: 0.75, ease: easing }}
               className="font-playfair text-3xl sm:text-4xl lg:text-[3.4rem] xl:text-[4rem] font-bold text-brand-title leading-[1.08] mb-7"
             >
-              Odontologia{' '}
+              Nutrição leve, prática{' '}
               <em className="text-brand-cta font-light not-italic">
-                Integrada
+                e equilibrada
               </em>{' '}
-              <span className="block">com Cuidado Humano</span>
+              <span className="block">que se encaixa na sua rotina</span>
             </m.h1>
 
             {/* Subtitle */}
@@ -56,8 +56,8 @@ export default function HeroSection() {
               transition={{ duration: 0.7, ease: easing }}
               className="font-dm text-base md:text-lg text-brand-body/90 leading-relaxed mb-9 max-w-[480px] font-light"
             >
-              Atendimento odontológico personalizado com tecnologia avançada,
-              precisão clínica e o cuidado humano que cada sorriso merece.
+              Atendimento presencial em Sapiranga e Nova Hartz,
+              e online para todo o Brasil.
             </m.p>
 
             {/* Bullet list */}
@@ -67,9 +67,9 @@ export default function HeroSection() {
               className="space-y-3.5 mb-11"
             >
               {[
-                'Atendimento humano e personalizado',
-                'Tecnologia e materiais de qualidade',
-                'Ambiente aconchegante em Sapiranga, RS',
+                'Presencial em Nova Hartz e Sapiranga',
+                'Online para qualquer lugar do mundo',
+                'Plano alimentar que cabe na sua rotina real',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 font-dm text-sm text-brand-body/90">
                   <CheckIcon />
@@ -85,12 +85,12 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 items-start"
             >
               <a
-                href="https://wa.me/5551995449443?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Laura%20Gehlen."
+                href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Eduarda%20Wirth."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 bg-brand-cta text-[#EAEAE5] font-dm font-medium tracking-wide text-sm px-9 py-4 rounded-full hover:bg-brand-contrast transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-0.5 min-h-[52px]"
               >
-                Agendar Avaliação Gratuita
+                Agendar Consulta
                 <svg
                   width="16" height="16" viewBox="0 0 16 16" fill="none"
                   className="group-hover:translate-x-1 transition-transform duration-300"
@@ -99,7 +99,7 @@ export default function HeroSection() {
                 </svg>
               </a>
               <a
-                href="https://wa.me/5551995449443?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Laura%20Gehlen."
+                href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Eduarda%20Wirth."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 border border-brand-detail/50 text-brand-contrast font-dm text-sm px-7 py-4 rounded-full hover:bg-brand-section/40 transition-all duration-300 min-h-[52px]"
@@ -134,7 +134,7 @@ export default function HeroSection() {
                 ))}
               </div>
               <p className="font-dm text-sm text-brand-body/90">
-                <span className="font-semibold text-brand-title">+5.049</span> avaliações no Google
+                <span className="font-semibold text-brand-title">Nutricionista</span> formada pela Unisinos
               </p>
             </m.div>
           </m.div>
@@ -150,8 +150,8 @@ export default function HeroSection() {
               {/* Image */}
               <div className="w-full h-full overflow-hidden rounded-2xl shadow-warm-xl">
                 <img
-                  src="/hero-photo.jpg"
-                  alt="Dra. Laura Gehlen — Odontologia Integrada em Sapiranga, RS"
+                  src="/hero-photo.png"
+                  alt="Eduarda Wirth — Nutricionista em Sapiranga e Nova Hartz, RS"
                   className="w-full h-full object-cover object-center"
                   loading="eager"
                   fetchpriority="high"
@@ -177,10 +177,10 @@ export default function HeroSection() {
                   </div>
                   <div>
                     <p className="font-playfair text-sm text-brand-title italic leading-tight">
-                      Avaliação gratuita
+                      Atendimento online
                     </p>
                     <p className="font-dm text-[10px] text-brand-contrast tracking-wide mt-0.5">
-                      Sem compromisso
+                      Para todo o Brasil
                     </p>
                   </div>
                 </div>

@@ -80,19 +80,19 @@ function MetricCard({ counter, unit, label, index }) {
 
 const metrics = [
   {
-    counter: <AnimatedCounter target={5049} />,
+    counter: <span>Presencial</span>,
     unit: '',
-    label: 'avaliações no Google',
+    label: 'Sapiranga · Nova Hartz, RS',
   },
   {
-    counter: <span>5,0</span>,
-    unit: '★',
-    label: 'nota média no Google',
+    counter: <span>Online</span>,
+    unit: '',
+    label: 'Para todo o Brasil',
   },
   {
-    counter: <span>Sapiranga</span>,
+    counter: <span>CRN</span>,
     unit: '',
-    label: 'Rio Grande do Sul · Centro',
+    label: '21631D · Registro profissional',
   },
 ]
 
@@ -108,12 +108,12 @@ function SectionHeader() {
       className="text-center mb-14"
     >
       <p className="font-dm text-xs text-brand-light/90 font-semibold tracking-[0.35em] uppercase mb-4">
-        Nossa trajetória
+        Sobre a nutricionista
       </p>
       <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-        Referência em Odontologia Integrada
+        Nutrição com Propósito
         <br />
-        <em className="font-light text-brand-section">em Sapiranga, RS</em>
+        <em className="font-light text-brand-section">em Sapiranga e Nova Hartz, RS</em>
       </h2>
     </m.div>
   )
@@ -131,8 +131,8 @@ function BodyText() {
       className="max-w-2xl mx-auto text-center"
     >
       <p className="font-dm text-base md:text-lg text-brand-light/90 leading-relaxed font-light mb-6">
-        Nossa missão vai além da técnica. Queremos que cada encontro
-        seja leve, humano e memorável.
+        Nutricionista formada pela Unisinos e pós-graduanda em Nutrição
+        Esportiva Funcional, com atendimento presencial em Sapiranga e Nova Hartz.
       </p>
       <div className="flex items-center justify-center gap-3 mb-6">
         <div className="w-8 h-px bg-brand-cta/40" />
@@ -140,8 +140,8 @@ function BodyText() {
         <div className="w-8 h-px bg-brand-cta/40" />
       </div>
       <p className="font-dm text-base md:text-lg text-brand-light/90 leading-relaxed font-light">
-        Excelência, pra nós, também se revela na forma como se cuida.
-        Cuidar com verdade é o que nos move.
+        Acredito que a nutrição vai muito além de dietas restritivas — ela é
+        uma ferramenta de autonomia, equilíbrio e qualidade de vida.
       </p>
     </m.div>
   )
