@@ -154,9 +154,21 @@ function BodyText() {
         Esportiva Funcional, com atendimento presencial em Sapiranga e Nova Hartz.
       </p>
       <div className="flex items-center justify-center gap-3 mb-6">
-        <div className="w-8 h-px bg-brand-cta/40" />
+        <m.div
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={visible ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          style={{ transformOrigin: 'right' }}
+          className="w-8 h-px bg-brand-cta/40"
+        />
         <div className="w-1.5 h-1.5 rounded-full bg-brand-cta/60" />
-        <div className="w-8 h-px bg-brand-cta/40" />
+        <m.div
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={visible ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          style={{ transformOrigin: 'left' }}
+          className="w-8 h-px bg-brand-cta/40"
+        />
       </div>
       <p className="font-dm text-base md:text-lg text-brand-light/90 leading-relaxed font-light">
         Acredito que a nutrição vai muito além de dietas restritivas — ela é

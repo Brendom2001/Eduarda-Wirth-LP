@@ -31,6 +31,16 @@ const fadeUpSm = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easing } },
 }
 
+const lineDraw = {
+  hidden: { scaleX: 0, opacity: 0 },
+  visible: { scaleX: 1, opacity: 1, transition: { duration: 0.75, ease: easing } },
+}
+
+const lineGroup = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.14 } },
+}
+
 // O iframe carrega assim que AboutSection monta (a 900px do viewport via LazySection)
 function LazyMap() {
   return (
@@ -122,7 +132,8 @@ export default function AboutSection() {
 
             {/* Linha decorativa */}
             <m.div
-              variants={fadeUp}
+              variants={lineDraw}
+              style={{ transformOrigin: 'left' }}
               className="w-12 h-px bg-brand-cta/40 mb-8"
             />
 
@@ -136,10 +147,10 @@ export default function AboutSection() {
             </m.p>
 
             {/* Separador ornamental */}
-            <m.div variants={fadeUp} className="flex items-center gap-3 my-5">
-              <div className="w-6 h-px bg-brand-cta/40" />
+            <m.div variants={lineGroup} className="flex items-center gap-3 my-5">
+              <m.div variants={lineDraw} style={{ transformOrigin: 'right' }} className="w-6 h-px bg-brand-cta/40" />
               <div className="w-1 h-1 rounded-full bg-brand-cta/50" />
-              <div className="w-6 h-px bg-brand-cta/40" />
+              <m.div variants={lineDraw} style={{ transformOrigin: 'left' }} className="w-6 h-px bg-brand-cta/40" />
             </m.div>
 
             {/* Parágrafo 2 */}
@@ -152,10 +163,10 @@ export default function AboutSection() {
             </m.p>
 
             {/* Separador ornamental */}
-            <m.div variants={fadeUp} className="flex items-center gap-3 my-5">
-              <div className="w-6 h-px bg-brand-cta/40" />
+            <m.div variants={lineGroup} className="flex items-center gap-3 my-5">
+              <m.div variants={lineDraw} style={{ transformOrigin: 'right' }} className="w-6 h-px bg-brand-cta/40" />
               <div className="w-1 h-1 rounded-full bg-brand-cta/50" />
-              <div className="w-6 h-px bg-brand-cta/40" />
+              <m.div variants={lineDraw} style={{ transformOrigin: 'left' }} className="w-6 h-px bg-brand-cta/40" />
             </m.div>
 
             {/* Parágrafo 3 */}

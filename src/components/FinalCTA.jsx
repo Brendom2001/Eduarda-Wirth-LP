@@ -1,5 +1,6 @@
 import { m } from 'framer-motion'
 import { useAnimateOnce } from '../hooks/useAnimateOnce'
+import MagneticWrapper from './MagneticWrapper'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -34,20 +35,22 @@ export default function FinalCTA() {
             e que realmente se encaixa na sua rotina.
           </p>
 
-          <a
-            href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20minha%20consulta%20com%20a%20Eduarda%20Wirth."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-3 bg-brand-cta text-[#EAEAE5] font-dm font-medium tracking-wide text-sm px-8 md:px-14 py-4 md:py-5 rounded-full hover:bg-brand-contrast transition-all duration-300 hover:shadow-warm-xl hover:-translate-y-1 min-h-[52px] w-full sm:w-auto"
-          >
-            Agendar Consulta
-            <svg
-              width="16" height="16" viewBox="0 0 16 16" fill="none"
-              className="group-hover:translate-x-1 transition-transform duration-300"
+          <MagneticWrapper className="inline-block w-full sm:w-auto">
+            <a
+              href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20minha%20consulta%20com%20a%20Eduarda%20Wirth."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-3 bg-brand-cta text-[#EAEAE5] font-dm font-medium tracking-wide text-sm px-8 md:px-14 py-4 md:py-5 rounded-full hover:bg-brand-contrast transition-all duration-300 hover:shadow-warm-xl hover:-translate-y-1 min-h-[52px] w-full"
             >
-              <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+              Agendar Consulta
+              <svg
+                width="16" height="16" viewBox="0 0 16 16" fill="none"
+                className="group-hover:translate-x-1 transition-transform duration-300"
+              >
+                <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </MagneticWrapper>
 
           <p className="font-dm text-xs text-brand-body/90 mt-6 tracking-wide">
             (51) 9 9548-4860 · Sapiranga / Nova Hartz, RS · Online para todo o Brasil

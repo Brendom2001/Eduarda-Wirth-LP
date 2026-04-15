@@ -80,7 +80,13 @@ function BenefitItem({ benefit, index }) {
       <h3 className="font-playfair text-xl font-bold text-brand-title mb-4 leading-snug">
         {benefit.title}
       </h3>
-      <div className="w-8 h-px bg-brand-cta/30 mx-auto mb-4 group-hover:w-14 transition-all duration-500" />
+      <m.div
+        initial={{ scaleX: 0, opacity: 0 }}
+        animate={visible ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
+        transition={{ duration: 0.6, ease: easing, delay: index * 0.12 + 0.25 }}
+        style={{ transformOrigin: 'center' }}
+        className="w-8 h-px bg-brand-cta/30 mx-auto mb-4 group-hover:w-14 transition-all duration-500"
+      />
       <p className="font-dm text-sm text-brand-body/90 leading-relaxed font-light">
         {benefit.text}
       </p>

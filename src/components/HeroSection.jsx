@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { m, useScroll, useTransform } from 'framer-motion'
+import MagneticWrapper from './MagneticWrapper'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -122,20 +123,22 @@ export default function HeroSection() {
               transition={{ duration: 0.7, ease: easing }}
               className="flex flex-col sm:flex-row gap-4 items-start"
             >
-              <a
-                href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Eduarda%20Wirth."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-brand-cta text-[#EAEAE5] font-dm font-medium tracking-wide text-sm px-7 py-4 rounded-full hover:bg-brand-contrast transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-0.5 min-h-[52px] w-full sm:w-auto justify-center sm:justify-start"
-              >
-                Agendar Consulta
-                <svg
-                  width="16" height="16" viewBox="0 0 16 16" fill="none"
-                  className="group-hover:translate-x-1 transition-transform duration-300"
+              <MagneticWrapper className="w-full sm:w-auto">
+                <a
+                  href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Eduarda%20Wirth."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 bg-brand-cta text-[#EAEAE5] font-dm font-medium tracking-wide text-sm px-7 py-4 rounded-full hover:bg-brand-contrast transition-all duration-300 hover:shadow-warm-lg hover:-translate-y-0.5 min-h-[52px] w-full justify-center sm:justify-start"
                 >
-                  <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
+                  Agendar Consulta
+                  <svg
+                    width="16" height="16" viewBox="0 0 16 16" fill="none"
+                    className="group-hover:translate-x-1 transition-transform duration-300"
+                  >
+                    <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </MagneticWrapper>
               <a
                 href="https://wa.me/5551995484860?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Eduarda%20Wirth."
                 target="_blank"
