@@ -54,15 +54,34 @@ function AnimatedCounter({ target }) {
   return <span ref={ref}>{count.toLocaleString('pt-BR')}</span>
 }
 
+// Variantes de entrada por índice no mobile
+const mobileInitial = [
+  { opacity: 0, x: -52 },   // 0 — Presencial: entra da esquerda
+  { opacity: 0, y: 28 },    // 1 — Online: fade + subida
+  { opacity: 0, x: 52 },    // 2 — CRN: entra da direita
+]
+const mobileVisible = [
+  { opacity: 1, x: 0 },
+  { opacity: 1, y: 0 },
+  { opacity: 1, x: 0 },
+]
+
 function MetricCard({ counter, unit, label, index }) {
   const [ref, visible] = useAnimateOnce()
+  const [isMobile] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth < 640
+  )
+
+  const initial   = isMobile ? mobileInitial[index]  : { opacity: 0, y: 16 }
+  const animateOn = isMobile ? mobileVisible[index]  : { opacity: 1, y: 0 }
+  const animateOff = isMobile ? mobileInitial[index] : { opacity: 0, y: 16 }
 
   return (
     <m.div
       ref={ref}
-      initial={{ opacity: 0, y: 16 }}
-      animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-      transition={{ duration: 0.6, ease: easing, delay: index * 0.1 }}
+      initial={initial}
+      animate={visible ? animateOn : animateOff}
+      transition={{ duration: isMobile ? 0.7 : 0.6, ease: easing, delay: index * 0.12 }}
       className="bg-brand-contrast px-6 md:px-8 py-8 md:py-12 text-center group hover:bg-[#6d5843] transition-colors duration-300"
     >
       <p className="font-playfair text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 group-hover:text-brand-light transition-colors duration-300">
