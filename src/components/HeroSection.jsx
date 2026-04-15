@@ -1,4 +1,5 @@
-import { m } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { m, useScroll, useTransform } from 'framer-motion'
 
 const easing = [0.22, 1, 0.36, 1]
 
@@ -22,6 +23,20 @@ const CheckIcon = () => (
 )
 
 export default function HeroSection() {
+  // Dispara o bob loop após a entrada do badge (delay 0.9s + duration 0.6s + buffer)
+  const [badgeBob, setBadgeBob] = useState(false)
+  useEffect(() => {
+    const t = setTimeout(() => setBadgeBob(true), 1700)
+    return () => clearTimeout(t)
+  }, [])
+
+  // Parallax: imagem se move mais devagar que o scroll (profundidade editorial)
+  const [isDesktop] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth >= 1024
+  )
+  const { scrollY } = useScroll()
+  const imageY = useTransform(scrollY, [0, 700], [0, isDesktop ? -55 : -20])
+
   return (
     <section id="inicio" className="min-h-screen bg-brand-bg relative flex items-center pt-20 overflow-hidden">
       {/* Decorações ambiente — ocultas no mobile (blur-3xl é pesado na GPU móvel) */}
@@ -170,12 +185,13 @@ export default function HeroSection() {
             className="relative w-full"
           >
             <div className="relative aspect-[3/4] md:aspect-[4/5] max-w-sm mx-auto lg:max-w-none">
-              {/* Image */}
-              <div className="w-full h-full overflow-hidden rounded-2xl shadow-warm-xl">
-                <img
+              {/* Image — parallax: imagem se move -55px enquanto o scroll avança 700px */}
+              <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-warm-xl">
+                <m.img
                   src="/hero-photo.png"
                   alt="Eduarda Wirth — Nutricionista em Sapiranga e Nova Hartz, RS"
-                  className="w-full h-full object-cover object-center"
+                  style={{ y: imageY, height: 'calc(100% + 55px)' }}
+                  className="w-full object-cover object-center"
                   loading="eager"
                   fetchpriority="high"
                 />
@@ -188,8 +204,16 @@ export default function HeroSection() {
               {/* Floating badge — bottom left */}
               <m.div
                 initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: easing, delay: 0.9 }}
+                animate={
+                  badgeBob
+                    ? { opacity: 1, y: [0, -7, 0] }
+                    : { opacity: 1, y: 0 }
+                }
+                transition={
+                  badgeBob
+                    ? { y: { repeat: Infinity, duration: 3.2, ease: 'easeInOut' } }
+                    : { duration: 0.6, ease: easing, delay: 0.9 }
+                }
                 className="absolute bottom-6 left-6 bg-[#EAEAE5]/95 backdrop-blur-sm px-4 py-3 shadow-warm-md rounded-xl"
               >
                 <div className="flex items-center gap-2.5">
