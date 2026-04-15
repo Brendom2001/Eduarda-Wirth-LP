@@ -111,7 +111,7 @@ function SectionHeader() {
 
 export default function TestimonialsSection() {
   return (
-    <section id="depoimentos" className="bg-brand-bg py-20">
+    <section className="bg-brand-bg py-20">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <SectionHeader />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

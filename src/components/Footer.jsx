@@ -7,7 +7,7 @@ export default function Footer() {
   const [col3Ref, col3Visible] = useAnimateOnce()
 
   return (
-    <footer id="footer" className="bg-brand-contrast text-white">
+    <footer className="bg-brand-contrast text-white">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
 
         <div className="py-12 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">

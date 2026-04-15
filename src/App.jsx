@@ -15,8 +15,9 @@ const AboutSection = lazy(() => import('./components/AboutSection'))
 const FinalCTA = lazy(() => import('./components/FinalCTA'))
 const Footer = lazy(() => import('./components/Footer'))
 
-// Componentes só montam quando estão próximos do viewport (900px de margem)
-function LazySection({ children, minHeight = '200px' }) {
+// Componentes só montam quando estão próximos do viewport
+// rootMargin: '2000px' garante pré-renderização antecipada para rolagem rápida
+function LazySection({ children, minHeight = '200px', id }) {
   const ref = useRef(null)
   const [shouldRender, setShouldRender] = useState(false)
 
@@ -30,14 +31,14 @@ function LazySection({ children, minHeight = '200px' }) {
           observer.disconnect()
         }
       },
-      { rootMargin: '900px' }
+      { rootMargin: '2000px' }
     )
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id={id}>
       {shouldRender ? (
         <Suspense fallback={<div style={{ minHeight }} />}>
           {children}
@@ -56,7 +57,7 @@ export default function App() {
         <Navbar />
         <main className="pb-20 md:pb-0">
           <HeroSection />
-          <LazySection minHeight="600px">
+          <LazySection minHeight="600px" id="procedimentos">
             <ProceduresSection />
           </LazySection>
           <LazySection minHeight="420px">
@@ -65,23 +66,23 @@ export default function App() {
           <LazySection minHeight="400px">
             <BenefitsSection />
           </LazySection>
-          <LazySection minHeight="420px">
+          <LazySection minHeight="420px" id="depoimentos">
             <TestimonialsSection />
           </LazySection>
-          <LazySection minHeight="380px">
+          <LazySection minHeight="380px" id="agendamento">
             <OfferSection />
           </LazySection>
           <LazySection minHeight="64px">
             <ScarcitySection />
           </LazySection>
-          <LazySection minHeight="520px">
+          <LazySection minHeight="520px" id="sobre">
             <AboutSection />
           </LazySection>
           <LazySection minHeight="400px">
             <FinalCTA />
           </LazySection>
         </main>
-        <LazySection minHeight="220px">
+        <LazySection minHeight="220px" id="footer">
           <Footer />
         </LazySection>
         <WhatsAppButton />

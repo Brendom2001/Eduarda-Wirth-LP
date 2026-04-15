@@ -183,7 +183,7 @@ function SectionHeader() {
 
 export default function ProceduresSection() {
   return (
-    <section id="procedimentos" className="bg-brand-bg py-20">
+    <section className="bg-brand-bg py-20">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <SectionHeader />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

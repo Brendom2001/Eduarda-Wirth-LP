@@ -51,7 +51,7 @@ export default function AboutSection() {
   const [textRef, textVisible] = useAnimateOnce()
 
   return (
-    <section id="sobre" className="bg-brand-bg py-20">
+    <section className="bg-brand-bg py-20">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-28 items-center">
 

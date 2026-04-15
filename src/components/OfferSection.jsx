@@ -22,7 +22,7 @@ export default function OfferSection() {
   const [cardRef, cardVisible] = useAnimateOnce()
 
   return (
-    <section id="agendamento" className="bg-brand-detail/15 py-20">
+    <section className="bg-brand-detail/15 py-20">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <div className="max-w-3xl mx-auto">
 
