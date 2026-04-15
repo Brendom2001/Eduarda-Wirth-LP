@@ -14,7 +14,7 @@ const highlights = [
 function LazyMap() {
   return (
     <iframe
-      src="https://maps.google.com/maps?q=Sapiranga,+RS,+Brasil&t=&z=14&ie=UTF8&iwloc=&output=embed"
+      src="https://maps.google.com/maps?q=-29.5846755,-50.903423&t=&z=15&ie=UTF8&iwloc=&output=embed"
       className="w-full h-full border-0"
       loading="lazy"
       title="Localização — Eduarda Wirth Nutricionista"
