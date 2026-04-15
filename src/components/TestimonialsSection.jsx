@@ -57,7 +57,7 @@ function TestimonialCard({ testimonial, index }) {
       initial="hidden"
       animate={visible ? 'visible' : 'hidden'}
       transition={{ duration: 0.65, ease: easing, delay: index * 0.12 }}
-      className="bg-brand-section/15 border border-brand-section/50 p-8 flex flex-col hover:border-brand-detail/60 hover:bg-brand-section/25 transition-colors duration-300 rounded-xl"
+      className="bg-brand-section/15 border border-brand-section/50 p-5 sm:p-8 flex flex-col hover:border-brand-detail/60 hover:bg-brand-section/25 transition-colors duration-300 rounded-xl"
     >
       <StarRow />
 
@@ -100,7 +100,7 @@ function SectionHeader() {
       <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-4">
         Depoimentos
       </p>
-      <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-brand-title leading-tight">
+      <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-title leading-tight">
         O Que as Pacientes
         <br />
         <em className="font-light text-brand-cta">Estão Dizendo</em>

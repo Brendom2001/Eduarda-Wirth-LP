@@ -93,10 +93,10 @@ function ProcedureCard({ procedure, index }) {
       initial="hidden"
       animate={visible ? 'visible' : 'hidden'}
       transition={{ duration: 0.65, ease: easing, delay: index * 0.1 }}
-      className="group bg-[#EAEAE5] border border-brand-section/60 p-8 relative flex flex-col shadow-warm-sm hover:shadow-warm-lg transition-shadow duration-500 cursor-default"
+      className="group bg-[#EAEAE5] border border-brand-section/60 p-5 sm:p-8 relative flex flex-col shadow-warm-sm hover:shadow-warm-lg transition-shadow duration-500 cursor-default"
     >
       {procedure.tag && (
-        <div className="absolute top-0 right-8 -translate-y-1/2">
+        <div className="absolute top-0 right-5 sm:right-8 -translate-y-1/2">
           <span className="bg-brand-cta text-[#EAEAE5] font-dm text-[10px] tracking-[0.15em] uppercase px-3 py-1 rounded-full block">
             {procedure.tag}
           </span>
@@ -172,7 +172,7 @@ function SectionHeader() {
       <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-4">
         Consulta Nutricional
       </p>
-      <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-brand-title leading-tight max-w-lg">
+      <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-title leading-tight max-w-lg">
         O Que Está Incluso
         <br />
         <em className="font-light text-brand-cta">no Atendimento</em>

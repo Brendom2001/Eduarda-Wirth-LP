@@ -23,7 +23,7 @@ export default function FinalCTA() {
             Próxima etapa
           </p>
 
-          <h2 className="font-playfair text-3xl md:text-5xl lg:text-6xl font-bold text-brand-title leading-tight mb-6">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-brand-title leading-tight mb-6">
             Agende a Sua Consulta
             <br />
             <em className="font-light text-brand-cta">com a Eduarda Wirth</em>

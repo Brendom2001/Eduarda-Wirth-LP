@@ -46,7 +46,7 @@ export default function AboutSection() {
                 <LazyMap />
               </div>
 
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-brand-detail/20 rounded-2xl -z-10 pointer-events-none" />
+              <div className="hidden md:block absolute -bottom-4 -right-4 w-full h-full border border-brand-detail/20 rounded-2xl -z-10 pointer-events-none" />
 
               <m.div
                 ref={badgeRef}
@@ -82,7 +82,7 @@ export default function AboutSection() {
             <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-4">
               Sobre a nutricionista
             </p>
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-brand-title leading-tight mb-5">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-brand-title leading-tight mb-5">
               Eduarda Wirth
               <br />
               <em className="font-light text-brand-cta">Nutricionista · CRN 21631D</em>
@@ -114,7 +114,7 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-x-8 gap-y-5">
+            <div className="grid grid-cols-2 gap-x-4 sm:gap-x-8 gap-y-5">
               {highlights.map(({ label, detail }) => (
                 <div key={label} className="border-t border-brand-section/60 pt-4">
                   <p className="font-dm text-xs font-semibold text-brand-title tracking-wide">{label}</p>

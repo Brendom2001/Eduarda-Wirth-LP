@@ -63,9 +63,9 @@ function MetricCard({ counter, unit, label, index }) {
       initial={{ opacity: 0, y: 16 }}
       animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
       transition={{ duration: 0.6, ease: easing, delay: index * 0.1 }}
-      className="bg-brand-contrast px-6 md:px-8 py-10 md:py-12 text-center group hover:bg-[#6d5843] transition-colors duration-300 last:col-span-2 md:last:col-span-1"
+      className="bg-brand-contrast px-6 md:px-8 py-8 md:py-12 text-center group hover:bg-[#6d5843] transition-colors duration-300"
     >
-      <p className="font-playfair text-4xl md:text-6xl font-bold text-white mb-2 group-hover:text-brand-light transition-colors duration-300">
+      <p className="font-playfair text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 group-hover:text-brand-light transition-colors duration-300">
         {counter}
         {unit && (
           <span className="text-brand-light text-2xl font-light ml-1.5">{unit}</span>
@@ -110,7 +110,7 @@ function SectionHeader() {
       <p className="font-dm text-xs text-brand-light/90 font-semibold tracking-[0.35em] uppercase mb-4">
         Sobre a nutricionista
       </p>
-      <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+      <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
         Nutrição com Propósito
         <br />
         <em className="font-light text-brand-section">em Sapiranga e Nova Hartz, RS</em>
@@ -153,7 +153,7 @@ export default function AuthoritySection() {
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <SectionHeader />
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-brand-cta/20 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-brand-cta/20 mb-14">
           {metrics.map(({ counter, unit, label }, index) => (
             <MetricCard
               key={label}

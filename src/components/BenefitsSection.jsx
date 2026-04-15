@@ -102,7 +102,7 @@ function SectionHeader() {
       <p className="font-dm text-xs text-brand-contrast font-semibold tracking-[0.35em] uppercase mb-4">
         Diferenciais
       </p>
-      <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-brand-title leading-tight">
+      <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-title leading-tight">
         O Que Você Não Vai
         <br />
         <em className="font-light text-brand-cta">Encontrar Aqui</em>
